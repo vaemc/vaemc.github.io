@@ -1,59 +1,95 @@
 <!DOCTYPE html>
-<html >
+<html lang="en" >
+
 <head>
   <meta charset="UTF-8">
-  <title>VAEMC</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>已选课题</title>
   
-  <link rel='stylesheet prefetch' href='https://www.w3schools.com/lib/w3.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 
-<style>
-  #heart {
-  color: #f77;
-}
+  
+      <link rel="stylesheet" href="style.css">
 
-img:hover {
-  cursor: pointer;
-}
-  body{background:#FFCOCB;}
-  </style>
   
 </head>
 
 <body>
-  <!-- Author:  Christian Pecson -->
-<!-- Date: July 2, 2016 -->
 
-<!-- Container (Projects) -->
-<section class="w3-content w3-container w3-padding-64">
-  <h1 class="w3-center">我家宝宝</h1>
-  <p class="w3-center"><em>小雯雯</em></p>
+  <section>
+  <!--for demo wrap-->
+  <h1>已选课题</h1>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>姓名</th>
+          <th>设计名称</th>
+          <th>指导老师</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
 
-  <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
-  <div class="w3-row-padding w3-center" appml-data="images">
-    
-    <div class="w3-col m4 w3-padding-16" appml-repeat="image">
-      <img src="{{src}}" alt="我家宝宝" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity">
-    </div>
-    
+ <script type="text/javascript">
+ function Students(name,design,teacher) {
+
+　　　　this.name=name;
+        this.design=design;
+        this.teacher=teacher;
+
+　　}
+
+    var stu=new Array();
+    stu.push(new Students("唐靖雯","小型超市管理系统","李奇"));
+    stu.push(new Students("舒艳裙","教务管理信息系统","李奇"));
+    stu.push(new Students("杨小翠","记账系统","李奇"));
+    stu.push(new Students("曾江虹","图书馆管理系统","李奇"));
+    stu.push(new Students("王影","小区物业管理系统","李奇"));
+    stu.push(new Students("尹海洋","宿舍管理系统","李奇"));
+    stu.push(new Students("唐小钦","医院门诊管理系统","向子明"));
+    stu.push(new Students("肖琼慧","产品商城pc版","李奇"));
+    stu.push(new Students("彭翔勃","网站制作（学校）","贺军"));
+    stu.push(new Students("龙涛","网站制作（新闻）","贺军"));
+    stu.push(new Students("范程","数据库应用系统（成绩管理系统）","刘慧芬"));
+    stu.push(new Students("曾允荣","Windows应用程序开发（选举投票软件）","蒋桥华"));
+    stu.push(new Students("杨顺天","Windows应用程序开发（模拟抢答器）","蒋桥华"));
+    stu.push(new Students("彭志瑜","通讯录","蒋桥华"));
+    stu.push(new Students("陈作敏","Windows应用程序开发（音乐播放器）","蒋桥华"));
+    stu.push(new Students("彭福国","学生管理系统","李奇"));
+    stu.push(new Students("舒晨","个人消费管理系统舒晨","蒋桥华"));
+
+    var Slist;
+  
+      var vaemc="";
+      for(i=0;i<stu.length;i++)
+      {
+          Slist=stu[i];
+          vaemc+="<tr><td>"+(i+1)+"</td><td>"+Slist.name+"</td><td>"+Slist.design+"</td><td>"+Slist.teacher+"</td></tr>" 
+           
+      }
+       
+        document.write(vaemc);
+        </script>
+
+       
+
+      </tbody>
+    </table>
   </div>
 </section>
-<!-- End Container (Projects) -->
 
-<!-- Modal for full size images on click-->
-<div id="modal" class="w3-modal w3-black" onclick="this.style.display='none'">
-  <span class="w3-closebtn w3-hover-red w3-text-white w3-xxxlarge w3-container w3-display-topright">×</span>
-  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-    <img id="img" style="max-width:100%">
-  </div>
+
+<!-- follow me template -->
+<div class="made-with-love">
+  vaemc
+  <i>♥</i> by
+  <a target="_blank" href="http://www.hhvtc.com.cn/">怀化职业技术学院</a>
 </div>
 
-<footer class="w3-container w3-dark-grey w3-hover-black w3-padding-8 w3-center">
- 永远的<span id="heart">❤</span> 她
-</footer>
-  <script src='https://www.w3schools.com/appml/2.0.3/appml.js'></script>
-
-    <script  src="js/index.js"></script>
-
 </body>
+
 </html>
